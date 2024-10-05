@@ -17,7 +17,7 @@ export const { useRegisterWithEmailAndPasswordMutation } = apiSlice.injectEndpoi
             queryFn: async (arg) => {
                 const userCredential = await createUserWithEmailAndPassword(firebaseAuth, arg.email, arg.password);
 
-                updateProfile(userCredential.user, {
+                await updateProfile(userCredential.user, {
                     displayName: arg.displayName,
                     photoURL: arg.photoURL || undefined,
                 });
