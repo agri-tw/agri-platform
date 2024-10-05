@@ -70,7 +70,7 @@ export const LocaleDropdown: React.FC = () => {
             </Combobox.Target>
             <Combobox.Dropdown>
                 <Combobox.Search value={search} onChange={handleSearchChange} placeholder="Search languages" />
-                <Combobox.Options>
+                <Combobox.Options mah="50vh" style={{ overflowY: "auto" }}>
                     {filteredLanguageCodes.map((code) => (
                         <LocaleOption key={code} code={code} />
                     ))}
