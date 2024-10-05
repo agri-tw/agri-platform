@@ -10,6 +10,7 @@
       "@/api/*": ["./src/api/*"],
       "@/components/*": ["./src/components/*"],
       "@/constants/*": ["./src/constants/*"],
+      "@/hooks/*": ["./src/hooks/*"],
       "@/locale/*": ["./src/locale/*"],
       "@/pages/*": ["./src/pages/*"],
       "@/store/*": ["./src/store/*"],

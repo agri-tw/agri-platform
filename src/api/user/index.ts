@@ -1,3 +1,4 @@
+export * from "./getRedirectResult";
 export * from "./getUser";
 export * from "./isLoggedIn";
 export * from "./loginWithEmailAndPassword";

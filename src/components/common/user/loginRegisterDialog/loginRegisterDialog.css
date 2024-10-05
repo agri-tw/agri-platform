@@ -1,0 +1,26 @@
+.dialog-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.dialog-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.dialog-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dialog-divider {
+    margin: 0;
+}
+
+.dialog-divider-text {
+    color: var(--text-color-secondary);
+}
