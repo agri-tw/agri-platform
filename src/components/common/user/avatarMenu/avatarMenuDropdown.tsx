@@ -5,12 +5,16 @@ import { forwardRef, useMemo, useState } from "react";
 import { useIsLoggedInQuery } from "@/api/user";
 
 import { LoginRegisterDialog } from "../loginRegisterDialog";
+import { LogoutDialog } from "../logoutDialog";
 
 export const AvatarMenuDropdown = forwardRef<Menu>((_props, ref) => {
     const { data: isLoggedIn } = useIsLoggedInQuery();
 
     const [isLoginRegisterDialogOpen, setLoginRegisterDialogOpen] = useState(false);
     const handleLoginRegisterDialogClose = () => setLoginRegisterDialogOpen(false);
+
+    const [isLogoutDialogOpen, setLogoutDialogOpen] = useState(false);
+    const handleLogoutDialogClose = () => setLogoutDialogOpen(false);
 
     const menuItemLogin: MenuItem = useMemo(
         () => ({
@@ -24,6 +28,7 @@ export const AvatarMenuDropdown = forwardRef<Menu>((_props, ref) => {
         () => ({
             label: "Sign out",
             icon: "pi pi-sign-out",
+            command: () => setLogoutDialogOpen(true),
         }),
         [],
     );
@@ -41,6 +46,7 @@ export const AvatarMenuDropdown = forwardRef<Menu>((_props, ref) => {
         <>
             <Menu model={items} ref={ref} popup popupAlignment="right" />
             <LoginRegisterDialog open={isLoginRegisterDialogOpen} onClose={handleLoginRegisterDialogClose} />
+            <LogoutDialog open={isLogoutDialogOpen} onClose={handleLogoutDialogClose} />
         </>
     );
 });
