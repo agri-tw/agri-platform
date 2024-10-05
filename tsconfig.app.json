@@ -7,10 +7,12 @@
     "skipLibCheck": true,
     "paths": {
       "@/*": ["./src/*"],
+      "@/api/*": ["./src/api/*"],
       "@/components/*": ["./src/components/*"],
       "@/constants/*": ["./src/constants/*"],
       "@/locale/*": ["./src/locale/*"],
       "@/pages/*": ["./src/pages/*"],
+      "@/store/*": ["./src/store/*"],
       "@/utils/*": ["./src/utils/*"]
     },
 
