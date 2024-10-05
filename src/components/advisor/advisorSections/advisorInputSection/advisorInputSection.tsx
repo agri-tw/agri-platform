@@ -7,7 +7,11 @@ import { fetchUserCoordinates } from "@/utils/user";
 
 import { usePosition } from "./usePosition";
 
-export const AdvisorInputSection: React.FC = () => {
+interface AdvisorInputSectionProps {
+    predict: (args: { crop: string; lat: number; long: number }) => void;
+}
+
+export const AdvisorInputSection: React.FC<AdvisorInputSectionProps> = (props) => {
     const [crop, setCrop] = useState<string>();
     const position = usePosition();
 
@@ -21,7 +25,11 @@ export const AdvisorInputSection: React.FC = () => {
 
     const handleSubmit = () => {
         if (crop && position.coordinates) {
-            console.log("Submitting", crop, position.coordinates.lat(), position.coordinates.lng());
+            props.predict({
+                crop,
+                lat: position.coordinates.lat(),
+                long: position.coordinates.lng(),
+            });
         } else {
             console.error("Crop or coordinates are not selected yet");
         }

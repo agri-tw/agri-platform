@@ -1,13 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import { apiSlice } from "@/api/apiSlice";
+import { cloudFunctionApiSlice, firebaseApiSlice } from "@/api/apiSlice";
 
 export const store = configureStore({
     reducer: {
-        [apiSlice.reducerPath]: apiSlice.reducer,
+        [cloudFunctionApiSlice.reducerPath]: cloudFunctionApiSlice.reducer,
+        [firebaseApiSlice.reducerPath]: firebaseApiSlice.reducer,
     },
     middleware: (getDefaultMiddleware) => {
-        return getDefaultMiddleware().concat(apiSlice.middleware);
+        return getDefaultMiddleware().concat(cloudFunctionApiSlice.middleware).concat(firebaseApiSlice.middleware);
     },
 });
 

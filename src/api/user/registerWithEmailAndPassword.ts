@@ -2,7 +2,7 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 import { firebaseAuth } from "@/utils/firebase";
 
-import { apiSlice } from "../apiSlice";
+import { firebaseApiSlice } from "../apiSlice";
 
 export type RegisterWithEmailAndPasswordPayload = {
     email: string;
@@ -11,7 +11,7 @@ export type RegisterWithEmailAndPasswordPayload = {
     photoURL: string;
 };
 
-export const { useRegisterWithEmailAndPasswordMutation } = apiSlice.injectEndpoints({
+export const { useRegisterWithEmailAndPasswordMutation } = firebaseApiSlice.injectEndpoints({
     endpoints: (builder) => ({
         registerWithEmailAndPassword: builder.mutation<string, RegisterWithEmailAndPasswordPayload>({
             queryFn: async (arg) => {

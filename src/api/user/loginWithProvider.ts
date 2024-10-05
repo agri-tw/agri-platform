@@ -2,9 +2,9 @@ import { AuthProvider, signInWithRedirect } from "firebase/auth";
 
 import { firebaseAuth } from "@/utils/firebase";
 
-import { apiSlice } from "../apiSlice";
+import { firebaseApiSlice } from "../apiSlice";
 
-export const { useLoginWithProviderMutation } = apiSlice.injectEndpoints({
+export const { useLoginWithProviderMutation } = firebaseApiSlice.injectEndpoints({
     endpoints: (builder) => ({
         loginWithProvider: builder.mutation<string, AuthProvider>({
             queryFn: async (arg) => {

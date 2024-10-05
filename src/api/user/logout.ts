@@ -2,9 +2,9 @@ import { signOut } from "firebase/auth";
 
 import { firebaseAuth } from "@/utils/firebase";
 
-import { apiSlice } from "../apiSlice";
+import { firebaseApiSlice } from "../apiSlice";
 
-export const { useLogoutMutation } = apiSlice.injectEndpoints({
+export const { useLogoutMutation } = firebaseApiSlice.injectEndpoints({
     endpoints: (builder) => ({
         logout: builder.mutation<string, void>({
             queryFn: async () => {

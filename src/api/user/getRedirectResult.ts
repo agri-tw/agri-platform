@@ -2,9 +2,9 @@ import { getRedirectResult } from "firebase/auth";
 
 import { firebaseAuth } from "@/utils/firebase";
 
-import { apiSlice } from "../apiSlice";
+import { firebaseApiSlice } from "../apiSlice";
 
-export const { useLazyGetRedirectResultQuery } = apiSlice.injectEndpoints({
+export const { useLazyGetRedirectResultQuery } = firebaseApiSlice.injectEndpoints({
     endpoints: (builder) => ({
         getRedirectResult: builder.query<string, void>({
             queryFn: async () => {

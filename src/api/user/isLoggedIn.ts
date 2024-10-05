@@ -1,8 +1,8 @@
 import { loadCurrentUser } from "@/utils/firebase";
 
-import { apiSlice } from "../apiSlice";
+import { firebaseApiSlice } from "../apiSlice";
 
-export const { useIsLoggedInQuery } = apiSlice.injectEndpoints({
+export const { useIsLoggedInQuery } = firebaseApiSlice.injectEndpoints({
     endpoints: (builder) => ({
         isLoggedIn: builder.query<boolean, void>({
             queryFn: async () => {
