@@ -7,6 +7,8 @@ import { useIsLoggedInQuery } from "@/api/user";
 import { LoginRegisterDialog } from "../loginRegisterDialog";
 import { LogoutDialog } from "../logoutDialog";
 
+import "./avatarMenuDropdown.css";
+
 export const AvatarMenuDropdown = forwardRef<Menu>((_props, ref) => {
     const { data: isLoggedIn } = useIsLoggedInQuery();
 
