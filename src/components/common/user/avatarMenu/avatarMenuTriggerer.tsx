@@ -1,22 +1,29 @@
-import { Button } from "primereact/button";
-import { Menu } from "primereact/menu";
+import { forwardRef } from "react";
 
+import { ActionIcon } from "@mantine/core";
+
+import { useIsLoggedInQuery } from "@/api/user";
 import { Avatar } from "@/components/common";
 
-import "./avatarMenuTriggerer.css";
-
 interface AvatarMenuTriggererProps {
-    dropdownRef: React.RefObject<Menu>;
+    onToggleMenuOpen: () => void;
 }
 
-export const AvatarMenuTriggerer: React.FC<AvatarMenuTriggererProps> = (props) => {
-    const handleClick: React.MouseEventHandler<HTMLButtonElement> = (event) => {
-        props.dropdownRef.current?.toggle(event);
-    };
-
+export const AvatarMenuTriggerer = forwardRef<HTMLButtonElement, AvatarMenuTriggererProps>((props, ref) => {
+    const { isLoading } = useIsLoggedInQuery();
     return (
-        <Button className="avatar-menu-triggerer" onClick={handleClick} rounded text>
+        <ActionIcon
+            ref={ref}
+            size="xl"
+            radius="xl"
+            variant="subtle"
+            loading={isLoading}
+            loaderProps={{ type: "dots" }}
+            onClick={props.onToggleMenuOpen}
+        >
             <Avatar />
-        </Button>
+        </ActionIcon>
     );
-};
+});
+
+AvatarMenuTriggerer.displayName = "AvatarMenuTriggerer";

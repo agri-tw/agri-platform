@@ -1,49 +1,44 @@
-import { Avatar as PrimeAvatar } from "primereact/avatar";
-import { Skeleton } from "primereact/skeleton";
 import { useMemo } from "react";
+
+import { Avatar as MantineAvatar } from "@mantine/core";
 
 import { useGetUserQuery } from "@/api/user";
 
 export const Avatar: React.FC = () => {
-    const { data: user, isLoading: isUserLoading } = useGetUserQuery();
+    const { data: user } = useGetUserQuery();
 
-    const { icon, image, label } = useMemo(() => {
+    const { src, text } = useMemo(() => {
         if (!user) {
             return {
-                icon: "pi pi-user",
-                image: undefined,
-                label: undefined,
+                src: undefined,
+                text: undefined,
             };
         } else if (user.photoURL) {
             return {
-                icon: undefined,
-                image: user.photoURL,
-                label: undefined,
+                src: user.photoURL,
+                text: undefined,
             };
         } else if (user.displayName) {
             return {
-                icon: undefined,
-                image: undefined,
-                label: user.displayName,
+                src: undefined,
+                text: user.displayName,
             };
         } else if (user.email) {
             return {
-                icon: undefined,
-                image: undefined,
-                label: user.email,
+                src: undefined,
+                text: user.email,
             };
         } else {
             return {
-                icon: "pi pi-user",
-                image: undefined,
-                label: undefined,
+                icon: undefined,
+                text: undefined,
             };
         }
     }, [user]);
 
-    return isUserLoading ? (
-        <Skeleton shape="circle" size="2rem" />
-    ) : (
-        <PrimeAvatar icon={icon} image={image} label={label} shape="circle" />
+    return (
+        <MantineAvatar variant="filled" radius="xl" src={src}>
+            {text}
+        </MantineAvatar>
     );
 };

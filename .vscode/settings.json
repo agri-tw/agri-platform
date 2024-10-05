@@ -1,3 +1,10 @@
 {
+  "cssVariables.lookupFiles": [
+    "**/*.css",
+    "**/*.scss",
+    "**/*.sass",
+    "**/*.less",
+    "node_modules/@mantine/core/styles.css"
+  ],
   "i18n-ally.localesPaths": ["src/locale"]
 }

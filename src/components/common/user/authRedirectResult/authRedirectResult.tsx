@@ -1,24 +1,23 @@
-import { Toast } from "primereact/toast";
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect } from "react";
+
+import { notifications } from "@mantine/notifications";
 
 import { useLazyGetRedirectResultQuery } from "@/api/user";
 import { getFirebaseErrorMessage } from "@/utils/error";
 
-export const AuthRedirectResult: React.FC = () => {
-    const toast = useRef<Toast>(null);
+const handleShowErrorNotification = (error: unknown) => {
+    notifications.show({
+        title: "Login failed",
+        message: getFirebaseErrorMessage(error),
+    });
+};
 
+export const AuthRedirectResult: React.FC = () => {
     const [getRedirectResult] = useLazyGetRedirectResultQuery();
 
-    const showErrorToast = useMemo(
-        () => (error: unknown) => {
-            toast.current?.show({ severity: "error", summary: "Login Failed", detail: getFirebaseErrorMessage(error) });
-        },
-        [],
-    );
-
     useEffect(() => {
-        getRedirectResult().catch(showErrorToast);
-    }, [getRedirectResult, showErrorToast]);
+        getRedirectResult().catch(handleShowErrorNotification);
+    }, [getRedirectResult]);
 
-    return <Toast ref={toast} />;
+    return <></>;
 };

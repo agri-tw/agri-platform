@@ -1,7 +1,8 @@
-import { Chip } from "primereact/chip";
 import { useTranslation } from "react-i18next";
+
+import { Chip } from "@mantine/core";
 
 export const Home: React.FC = () => {
     const { t } = useTranslation();
-    return <Chip label={t("helloWorld", { ns: ["common"] })} icon="pi pi-check" />;
+    return <Chip>{t("helloWorld", { ns: ["common"] })}</Chip>;
 };

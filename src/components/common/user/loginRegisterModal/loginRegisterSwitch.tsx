@@ -1,4 +1,4 @@
-import { Button } from "primereact/button";
+import { Button } from "@mantine/core";
 
 interface LoginRegisterSwitchProps {
     type: "login" | "register";
@@ -18,10 +18,9 @@ export const LoginRegisterSwitch: React.FC<LoginRegisterSwitchProps> = (props) =
     };
 
     return (
-        <Button
-            label={props.type === "login" ? "Don't have an account?" : "Already have an account?"}
-            link
-            onClick={handleSwitch}
-        />
+        <Button variant="transparent" onClick={handleSwitch}>
+            {props.type === "login" && "Don't have an account?"}
+            {props.type === "register" && "Already have an account?"}
+        </Button>
     );
 };

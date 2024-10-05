@@ -1,17 +1,19 @@
 import { Outlet } from "react-router-dom";
 
-import { AuthRedirectResult, Navbar } from "@/components/common";
+import { AppShell } from "@mantine/core";
 
-import "./layout.css";
+import { AuthRedirectResult, Navbar } from "@/components/common";
 
 export const Layout: React.FC = () => {
     return (
-        <div className="layout">
+        <AppShell padding="md" header={{ height: 64 }}>
             <AuthRedirectResult />
-            <Navbar />
-            <main className="main">
+            <AppShell.Header>
+                <Navbar />
+            </AppShell.Header>
+            <AppShell.Main>
                 <Outlet />
-            </main>
-        </div>
+            </AppShell.Main>
+        </AppShell>
     );
 };
