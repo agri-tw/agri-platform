@@ -2,9 +2,14 @@ import { ChangeEventHandler, useEffect, useState } from "react";
 
 import { TextInput } from "@mantine/core";
 
+import { UserPositionMap } from "./userPositionMap";
+
 interface AddressInputProps {
     address: string | undefined;
+    coordinates: google.maps.LatLng | undefined;
     onUpdateAddress: (address: string) => void;
+    onUpdateCoordinates: (coordinates: google.maps.LatLng) => void;
+    loading: boolean;
     error: string | null;
 }
 
@@ -30,7 +35,11 @@ export const AddressInput: React.FC<AddressInputProps> = (props) => {
             label="Address"
             description="Modify if the address is incorrect"
             value={address}
+            disabled={props.loading}
             error={props.error}
+            rightSection={
+                <UserPositionMap coordinates={props.coordinates} onUpdateCoordinates={props.onUpdateCoordinates} />
+            }
             onChange={handleAddressChange}
             onMouseLeave={handleAddressMouseLeave}
         />

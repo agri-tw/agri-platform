@@ -42,7 +42,10 @@ export const AdvisorInputSection: React.FC<AdvisorInputSectionProps> = (props) =
                 <>
                     <AddressInput
                         address={position.address}
+                        coordinates={position.coordinates}
                         onUpdateAddress={position.updateAddress}
+                        onUpdateCoordinates={position.updateCoordinates}
+                        loading={position.loading}
                         error={position.error}
                     />
                     <Button onClick={handleSubmit} loading={position.loading} disabled={!!position.error}>
