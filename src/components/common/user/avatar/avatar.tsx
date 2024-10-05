@@ -1,10 +1,11 @@
 import { Avatar as PrimeAvatar } from "primereact/avatar";
+import { Skeleton } from "primereact/skeleton";
 import { useMemo } from "react";
 
 import { useGetUserQuery } from "@/api/user";
 
 export const Avatar: React.FC = () => {
-    const { data: user } = useGetUserQuery();
+    const { data: user, isLoading: isUserLoading } = useGetUserQuery();
 
     const { icon, image, label } = useMemo(() => {
         if (!user) {
@@ -40,5 +41,9 @@ export const Avatar: React.FC = () => {
         }
     }, [user]);
 
-    return <PrimeAvatar icon={icon} image={image} label={label} shape="circle" />;
+    return isUserLoading ? (
+        <Skeleton shape="circle" size="2rem" />
+    ) : (
+        <PrimeAvatar icon={icon} image={image} label={label} shape="circle" />
+    );
 };
