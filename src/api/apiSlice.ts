@@ -10,7 +10,7 @@ export const firebaseApiSlice = createApi({
 export const cloudFunctionApiSlice = createApi({
     reducerPath: "api-slice/cloud-function",
     baseQuery: fetchBaseQuery({
-        baseUrl: "https://agri-server-vvqtt2yjkq-uc.a.run.app",
+        baseUrl: "https://server-465641954681.us-central1.run.app/",
     }),
     tagTypes: ["predict"],
     endpoints: () => ({}),
