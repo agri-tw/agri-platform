@@ -8,6 +8,9 @@ import react from "@vitejs/plugin-react-swc";
 export default defineConfig({
     plugins: [basicSsl(), react()],
     resolve: {
-        alias: [{ find: "@", replacement: resolve(__dirname, "./src") }],
+        alias: [
+            { find: "@", replacement: resolve(__dirname, "./src") },
+            { find: "@/locale", replacement: resolve(__dirname, "./src/locale") },
+        ],
     },
 });

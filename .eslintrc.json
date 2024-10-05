@@ -11,7 +11,8 @@
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:prettier/recommended",
-    "plugin:jsx-a11y/recommended"
+    "plugin:jsx-a11y/recommended",
+    "plugin:i18next/recommended"
   ],
   "ignorePatterns": ["dist", ".eslintrc.json"],
   "parser": "@typescript-eslint/parser",
@@ -19,7 +20,7 @@
     "ecmaVersion": 6,
     "sourceType": "module"
   },
-  "plugins": ["jsx-a11y", "prettier", "react"],
+  "plugins": ["i18next", "jsx-a11y", "prettier", "react"],
   "rules": {
     "prettier/prettier": "error",
     "no-unused-vars": "off",

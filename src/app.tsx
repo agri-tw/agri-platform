@@ -1,3 +1,6 @@
+import { useTranslation } from "react-i18next";
+
 export const App: React.FC = () => {
-    return <>Hello World</>;
+    const { t } = useTranslation();
+    return <>{t("helloWorld", { ns: ["common"] })}</>;
 };
