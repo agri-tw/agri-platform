@@ -1,5 +1,7 @@
 import { createApi, fakeBaseQuery, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
+import { env } from "@/constants/environment";
+
 export const firebaseApiSlice = createApi({
     reducerPath: "api-slice/firebase",
     baseQuery: fakeBaseQuery(),
@@ -10,7 +12,7 @@ export const firebaseApiSlice = createApi({
 export const cloudFunctionApiSlice = createApi({
     reducerPath: "api-slice/cloud-function",
     baseQuery: fetchBaseQuery({
-        baseUrl: "https://server-465641954681.us-central1.run.app/",
+        baseUrl: env.WEBSERVER_URL,
     }),
     tagTypes: ["predict"],
     endpoints: () => ({}),

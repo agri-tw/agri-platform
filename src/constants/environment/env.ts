@@ -8,6 +8,7 @@ interface ImportMetaEnv {
     FIREBASE_STORAGE_BUCKET: string;
     FIREBASE_MESSAGING_SENDER_ID: string;
     FIREBASE_APP_ID: string;
+    WEBSERVER_URL: string;
 }
 /**
  * Environment variables.
@@ -37,4 +38,8 @@ export const env: ImportMetaEnv = {
      * Firebase app ID.
      */
     FIREBASE_APP_ID: import.meta.env.VITE_FIREBASE_APP_ID || "",
+    /**
+     * Webserver URL.
+     */
+    WEBSERVER_URL: import.meta.env.VITE_WEBSERVER_URL || "",
 };
