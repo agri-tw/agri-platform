@@ -187,7 +187,7 @@ export const CropSelection: React.FC<CropSelectionProps> = (props) => {
                 />
             </Combobox.Target>
             <Combobox.Dropdown>
-                <Combobox.Options>
+                <Combobox.Options mah="50vh" style={{ overflowY: "auto" }}>
                     {filteredCrops.map((crop) => (
                         <CropOption key={crop} name={crop} highlight={search} />
                     ))}
