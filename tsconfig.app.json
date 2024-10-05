@@ -12,6 +12,7 @@
       "@/constants/*": ["./src/constants/*"],
       "@/hooks/*": ["./src/hooks/*"],
       "@/locale/*": ["./src/locale/*"],
+      "@/models/*": ["./src/models/*"],
       "@/pages/*": ["./src/pages/*"],
       "@/store/*": ["./src/store/*"],
       "@/utils/*": ["./src/utils/*"]
