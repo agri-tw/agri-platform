@@ -6,6 +6,7 @@ import { MantineProvider } from "@mantine/core";
 import { Notifications } from "@mantine/notifications";
 
 import { App } from "@/app";
+import { GoogleMapsProvider } from "@/contexts/googleMaps";
 import "@/locale/setup";
 import { store } from "@/store/setup";
 
@@ -22,10 +23,12 @@ import "normalize.css";
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
         <ReduxProvider store={store}>
-            <MantineProvider>
-                <Notifications />
-                <App />
-            </MantineProvider>
+            <GoogleMapsProvider>
+                <MantineProvider>
+                    <Notifications />
+                    <App />
+                </MantineProvider>
+            </GoogleMapsProvider>
         </ReduxProvider>
     </StrictMode>,
 );

@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.16.8",
     "@mantine/carousel": "^7.12.2",
     "@mantine/charts": "^7.12.2",
     "@mantine/core": "^7.12.2",
@@ -43,6 +44,7 @@
   },
   "devDependencies": {
     "@peterek/vite-plugin-favicons": "^2.0.0",
+    "@types/google.maps": "^3.58.0",
     "@types/node": "^22.5.4",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
