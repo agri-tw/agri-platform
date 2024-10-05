@@ -19,7 +19,7 @@ const LocaleOption: React.FC<LocaleOptionProps> = (props) => {
 
 const languageCodes = Object.keys(languageConfigs) as (keyof typeof languageConfigs)[];
 
-export const LocaleDropdown: React.FC = () => {
+export const LocaleSelection: React.FC = () => {
     const { i18n } = useTranslation();
     const [search, setSearch] = useState("");
     const combobox = useCombobox({

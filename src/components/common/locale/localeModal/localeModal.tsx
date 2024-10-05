@@ -1,6 +1,6 @@
 import { Modal } from "@mantine/core";
 
-import { LocaleDropdown } from "./localeDropdown";
+import { LocaleSelection } from "./localeSelection";
 
 interface LocaleModalProps {
     open: boolean;
@@ -14,7 +14,7 @@ export const LocaleModal: React.FC<LocaleModalProps> = (props) => {
 
     return (
         <Modal opened={props.open} onClose={handleClose} title="Language" centered>
-            <LocaleDropdown />
+            <LocaleSelection />
         </Modal>
     );
 };
