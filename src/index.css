@@ -10,3 +10,15 @@ a {
 a:hover {
     filter: brightness(0.85);
 }
+
+.p-dropdown {
+    margin: 0.2rem 0;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+    background: rgb(from var(--primary-color) r g b / 4%);
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight.p-focus {
+    background: rgb(from var(--primary-color) r g b / 24%);
+}
