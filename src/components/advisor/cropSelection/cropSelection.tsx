@@ -145,10 +145,9 @@ export const CropSelection: React.FC<CropSelectionProps> = (props) => {
     const combobox = useCombobox({
         onDropdownClose: () => {
             combobox.resetSelectedOption();
-            combobox.focusTarget();
         },
         onDropdownOpen: () => {
-            combobox.focusSearchInput();
+            combobox.focusTarget();
         },
     });
 
