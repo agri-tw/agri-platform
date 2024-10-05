@@ -33,14 +33,14 @@ export const LocaleDropdown: React.FC = () => {
         },
     });
 
-    const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleSearchChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
         setSearch(event.currentTarget.value);
     };
 
     const handleLocaleChange = (value: string, _optionProps: ComboboxOptionProps) => {
-        i18n.changeLanguage(value);
-        setSearch(value);
         combobox.closeDropdown();
+        setSearch(value);
+        i18n.changeLanguage(value);
     };
 
     const filteredLanguageCodes = useMemo(() => {
@@ -54,7 +54,7 @@ export const LocaleDropdown: React.FC = () => {
         <Combobox
             store={combobox}
             onOptionSubmit={handleLocaleChange}
-            transitionProps={{ duration: 200, transition: "pop" }}
+            transitionProps={{ duration: 200, transition: "pop-top-left" }}
         >
             <Combobox.Target>
                 <InputBase

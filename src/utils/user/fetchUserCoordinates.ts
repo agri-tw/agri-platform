@@ -1,5 +1,5 @@
 export const fetchUserCoordinates = async () =>
-    new Promise<GeolocationCoordinates>((resolve, reject) => {
+    new Promise<google.maps.LatLng>((resolve, reject) => {
         if (!navigator.geolocation) {
             reject(new Error("Geolocation is not supported in your browser."));
         }
@@ -8,7 +8,7 @@ export const fetchUserCoordinates = async () =>
                 reject(new Error("Geolocation is denied in your browser."));
             } else {
                 navigator.geolocation.getCurrentPosition(
-                    (position) => resolve(position.coords),
+                    (position) => resolve(new google.maps.LatLng(position.coords.latitude, position.coords.longitude)),
                     (error) => reject(error),
                     { maximumAge: 50000, timeout: 20000, enableHighAccuracy: true },
                 );
