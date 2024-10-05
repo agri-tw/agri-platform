@@ -1,7 +1,5 @@
 import { InputText } from "primereact/inputtext";
 
-import "./displayNameInput.css";
-
 interface DisplayNameInputProps {
     inputId: string;
     value: string;

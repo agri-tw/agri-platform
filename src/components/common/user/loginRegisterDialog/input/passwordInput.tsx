@@ -1,7 +1,5 @@
 import { Password } from "primereact/password";
 
-import "./passwordInput.css";
-
 interface PasswordInputProps {
     inputId: string;
     value: string;

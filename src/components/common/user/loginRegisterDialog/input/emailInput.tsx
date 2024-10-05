@@ -1,8 +1,6 @@
 import { InputText } from "primereact/inputtext";
 import { useEffect, useRef } from "react";
 
-import "./emailInput.css";
-
 interface EmailInputProps {
     inputId: string;
     dialogOpen: boolean;

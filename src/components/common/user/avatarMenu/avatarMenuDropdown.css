@@ -1,7 +1,0 @@
-.p-menu .p-menuitem:not(.p-highlight):not(.p-disabled).p-focus > .p-menuitem-content {
-    background-color: var(--surface-0);
-}
-
-.p-menu .p-menuitem:not(.p-highlight):not(.p-disabled):hover > .p-menuitem-content {
-    background-color: var(--surface-hover);
-}
