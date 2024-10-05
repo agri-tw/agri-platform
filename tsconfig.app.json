@@ -7,7 +7,9 @@
     "skipLibCheck": true,
     "paths": {
       "@/*": ["./src/*"],
-      "@/locale/*": ["./src/locale/*"]
+      "@/constants/*": ["./src/constants/*"],
+      "@/locale/*": ["./src/locale/*"],
+      "@/utils/*": ["./src/utils/*"]
     },
 
     /* Bundler mode */

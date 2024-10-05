@@ -13,6 +13,9 @@
 .runtimeconfig.json
 .firebase/
 
+# Cache
+*.cache
+
 ### Node ###
 # Logs
 logs
