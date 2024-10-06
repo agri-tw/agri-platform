@@ -26,7 +26,7 @@ export const AdvisorOutputSection: React.FC<AdvisorOutputSectionProps> = (props)
             </Alert>
         );
     } else if (!props.data) {
-        return <div>No Data</div>;
+        return <></>;
     } else {
         return (
             <Accordion defaultValue="crop_price_management">
