@@ -25,7 +25,7 @@ export const Home: React.FC = () => {
                 <Group>
                     <Image radius="md" h={20} w="auto" fit="contain" src={favicon} />
                     <Text size="lg" fw={900} variant="gradient" gradient={{ from: "teal.0", to: "blue.0", deg: 90 }}>
-                        ClimateSmart Farming Assistant
+                        Global Farm Assistant
                     </Text>
                 </Group>
                 <Text
