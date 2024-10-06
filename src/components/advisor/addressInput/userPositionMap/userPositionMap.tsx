@@ -30,6 +30,9 @@ export const UserPositionMap: React.FC<UserPositionMapProps> = (props) => {
 
     const handleOpen = () => {
         setOpen(true);
+        if (googleMapsServices?.map && props.coordinates) {
+            googleMapsServices.map.setCenter(props.coordinates);
+        }
         bindUserMarkerWithMap();
     };
 
