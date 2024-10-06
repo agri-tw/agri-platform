@@ -1,11 +1,33 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Center, Group, Image, Space, Text } from "@mantine/core";
 
+import { useIsLoggedInQuery } from "@/api/user";
 import favicon from "@/assets/images/favicon.png";
 import homebg from "@/assets/images/homebg.jpg";
+import { LoginRegisterModal } from "@/components/common";
+import { url } from "@/constants/routes";
 
 export const Home: React.FC = () => {
+    const navigate = useNavigate();
+    const handleNavigateTo = (link: keyof typeof url) => {
+        navigate(url[link]);
+    };
+    const { data: isLoggedIn } = useIsLoggedInQuery();
+
+    const [loginRegisterModalOpen, setLoginRegisterModalOpen] = useState(false);
+    const handleLoginRegisterModalClose = () => setLoginRegisterModalOpen(false);
+
+    const handleAdvisorClick = () => {
+        if (!isLoggedIn) {
+            setLoginRegisterModalOpen(true);
+            return;
+        }
+        handleNavigateTo("advisor");
+    };
     return (
         <>
             <Center
@@ -44,13 +66,19 @@ export const Home: React.FC = () => {
                     productivity and sustainability.
                 </Text>
                 <Space h="lg" />
-                <Button size="lg" variant="gradient" gradient={{ from: "blue", to: "cyan", deg: 90 }}>
+                <Button
+                    size="lg"
+                    variant="gradient"
+                    gradient={{ from: "blue", to: "cyan", deg: 90 }}
+                    onClick={handleAdvisorClick}
+                >
                     <Text size="24px" fw={500} pr="md">
                         Get started
                     </Text>
                     <FontAwesomeIcon icon={faArrowRight} size="xl" />
                 </Button>
             </Center>
+            <LoginRegisterModal open={loginRegisterModalOpen} onClose={handleLoginRegisterModalClose} />
         </>
     );
 };
