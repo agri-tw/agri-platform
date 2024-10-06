@@ -30,7 +30,7 @@ export const Avatar: React.FC = () => {
             };
         } else {
             return {
-                icon: undefined,
+                src: undefined,
                 text: undefined,
             };
         }

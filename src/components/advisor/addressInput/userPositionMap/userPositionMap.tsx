@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 
-import { AspectRatio, Button, Drawer } from "@mantine/core";
+import { faMapLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ActionIcon, AspectRatio, Button, Drawer } from "@mantine/core";
 
 import { useGoogleMaps } from "@/contexts/googleMaps";
 import { loadGoogleMapMarker } from "@/utils/googleMaps";
@@ -87,7 +89,9 @@ export const UserPositionMap: React.FC<UserPositionMapProps> = (props) => {
                 <AspectRatio ref={mapWrapperRef} ratio={1080 / 720} mah="50vh" maw="90%" mx="auto" />
             </Drawer>
 
-            <Button onClick={handleOpen}>Choose Position</Button>
+            <ActionIcon onClick={handleOpen}>
+                <FontAwesomeIcon icon={faMapLocationDot} />
+            </ActionIcon>
         </>
     );
 };

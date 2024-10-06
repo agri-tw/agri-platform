@@ -1,3 +1,5 @@
+import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Menu } from "@mantine/core";
 
 interface MenuItemLogoutProps {
@@ -5,5 +7,9 @@ interface MenuItemLogoutProps {
 }
 
 export const MenuItemLogout: React.FC<MenuItemLogoutProps> = (props) => {
-    return <Menu.Item onClick={props.onClick}>Logout</Menu.Item>;
+    return (
+        <Menu.Item leftSection={<FontAwesomeIcon icon={faRightToBracket} />} onClick={props.onClick}>
+            Logout
+        </Menu.Item>
+    );
 };

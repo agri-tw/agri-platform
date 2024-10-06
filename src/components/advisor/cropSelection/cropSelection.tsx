@@ -1,5 +1,7 @@
 import { useMemo, useState } from "react";
 
+import { faWheatAwn } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Combobox, ComboboxOptionProps, Highlight, TextInput, useCombobox } from "@mantine/core";
 
 const crops = [
@@ -177,6 +179,7 @@ export const CropSelection: React.FC<CropSelectionProps> = (props) => {
             <Combobox.Target>
                 <TextInput
                     label="Crop"
+                    leftSection={<FontAwesomeIcon icon={faWheatAwn} />}
                     placeholder="Select a crop"
                     value={search}
                     onChange={handleSearchChange}
