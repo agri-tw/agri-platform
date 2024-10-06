@@ -28,7 +28,7 @@ export const NavbarStart: React.FC = () => {
     return (
         <Group>
             <Button variant="transparent" onClick={() => handleNavigateTo("home")}>
-                <Text size="xl" fw={900} variant="gradient" gradient={{ from: "blue", to: "cyan", deg: 90 }}>
+                <Text size="xl" fw={900} variant="gradient" gradient={{ from: "teal", to: "blue", deg: 90 }}>
                     ClimateSmart Farming Assistant
                 </Text>
             </Button>
