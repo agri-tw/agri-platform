@@ -1,4 +1,7 @@
 {
+  "findYourPosition": "Find your position",
+  "submit": "Submit",
+  "errorRequestingAdvice": "Error requesting advice",
   "action_you_should_take_immediately": "Action you should take immediately",
   "crop_selection_and_rotation": "Crop selection and rotation",
   "harvest_and_post_harvest_management": "Harvest and post-harvest management",
@@ -7,6 +10,10 @@
   "soil_and_nutrient_management": "Soil and nutrient management",
   "temperature_management": "Temperature management",
   "water_resoure_management": "Water resoure management",
+  "address": "Address",
+  "addressInputDescription": "Modify if the address is incorrect",
+  "crop": "Crop",
+  "cropPlaceholder": "Select or enter a crop",
   "acacia": "Acacia",
   "alfalfa": "Alfalfa",
   "almond": "Almond",

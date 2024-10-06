@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -12,6 +13,7 @@ import { LoginRegisterModal } from "@/components/common";
 import { url } from "@/constants/routes";
 
 export const Home: React.FC = () => {
+    const { t } = useTranslation();
     const navigate = useNavigate();
     const handleNavigateTo = (link: keyof typeof url) => {
         navigate(url[link]);
@@ -48,7 +50,7 @@ export const Home: React.FC = () => {
                 <Group>
                     <Image radius="md" h={20} w="auto" fit="contain" src={favicon} />
                     <Text size="lg" fw={900} variant="gradient" gradient={{ from: "teal.0", to: "blue.0", deg: 90 }}>
-                        Global Farm Assistant
+                        {t("globalFarmAssistant", { ns: "common" })}
                     </Text>
                 </Group>
                 <Text
@@ -58,12 +60,11 @@ export const Home: React.FC = () => {
                     gradient={{ from: "teal.0", to: "blue.0", deg: 90 }}
                     style={{ lineHeight: "48px" }}
                 >
-                    Empowering Farmers with AI
+                    {t("introSubtitle", { ns: "home" })}
                 </Text>
                 <Space h="lg" />
                 <Text size="md" fw={500} variant="gradient" gradient={{ from: "teal.0", to: "blue.0", deg: 90 }}>
-                    Empower farmers with data-driven insights to make informed decisions and enhance agricultural
-                    productivity and sustainability.
+                    {t("introContent", { ns: "home" })}
                 </Text>
                 <Space h="xl" />
                 <Button
@@ -73,7 +74,7 @@ export const Home: React.FC = () => {
                     onClick={handleAdvisorClick}
                 >
                     <Text size="24px" fw={500} pr="md">
-                        Get started
+                        {t("getStarted", { ns: "home" })}
                     </Text>
                     <FontAwesomeIcon icon={faArrowRight} size="xl" />
                 </Button>

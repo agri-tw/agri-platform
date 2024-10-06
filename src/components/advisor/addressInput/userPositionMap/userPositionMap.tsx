@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { faMapLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -21,6 +22,7 @@ function debounce<A>(func: (args: A) => void, ms: number) {
 }
 
 export const UserPositionMap: React.FC<UserPositionMapProps> = (props) => {
+    const { t } = useTranslation();
     const [open, setOpen] = useState(false);
     const userMarkerRef = useRef<google.maps.marker.AdvancedMarkerElement | null>(null);
 
@@ -80,7 +82,7 @@ export const UserPositionMap: React.FC<UserPositionMapProps> = (props) => {
             <Drawer
                 opened={open}
                 onClose={handleClose}
-                title="Find your Position"
+                title={t("findYourPosition", { ns: "advisor" })}
                 position="bottom"
                 styles={{
                     body: { flex: 1 },

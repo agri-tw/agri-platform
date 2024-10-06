@@ -1,3 +1,25 @@
 {
-  "helloWorld": "你好世界！"
+  "advisor": "顧問",
+  "cancel": "取消",
+  "home": "首頁",
+  "language": "語言",
+  "signIn": "登入",
+  "signUp": "註冊",
+  "email": "電子郵件",
+  "emailPlaceholder": "輸入您的電子郵件",
+  "password": "密碼",
+  "passwordPlaceholder": "輸入您的密碼",
+  "displayName": "顯示名稱",
+  "displayNamePlaceholder": "輸入您的顯示名稱",
+  "dontHaveAccount": "沒有帳戶嗎？",
+  "alreadyHaveAccount": "已經有帳戶了嗎？",
+  "orSignInWith": "或使用以下方式登入",
+  "orSignUpWith": "或使用以下方式註冊",
+  "Google": "Google",
+  "signOut": "登出",
+  "signOutMessage": "確定要登出嗎？",
+  "signInFailed": "登入失敗",
+  "signUpFailed": "註冊失敗",
+  "signOutFailed": "登出失敗",
+  "globalFarmAssistant": "全球農場助理"
 }

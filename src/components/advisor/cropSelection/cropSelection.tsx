@@ -187,9 +187,9 @@ export const CropSelection: React.FC<CropSelectionProps> = (props) => {
         >
             <Combobox.Target>
                 <TextInput
-                    label="Crop"
+                    label={t("crop", { ns: "advisor" })}
                     leftSection={<FontAwesomeIcon icon={faWheatAwn} />}
-                    placeholder="Select a crop"
+                    placeholder={t("cropPlaceholder", { ns: "advisor" })}
                     value={search}
                     onChange={handleSearchChange}
                     onClick={() => combobox.openDropdown()}

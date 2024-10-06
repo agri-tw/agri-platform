@@ -14,7 +14,7 @@ interface AdvisorInputSectionProps {
 }
 
 export const AdvisorInputSection: React.FC<AdvisorInputSectionProps> = (props) => {
-    const { i18n } = useTranslation();
+    const { t, i18n } = useTranslation();
     const [crop, setCrop] = useState<string>();
     const position = usePosition();
 
@@ -53,7 +53,7 @@ export const AdvisorInputSection: React.FC<AdvisorInputSectionProps> = (props) =
                         error={position.error}
                     />
                     <Button onClick={handleSubmit} loading={position.loading} disabled={!!position.error}>
-                        Submit
+                        {t("submit", { ns: "advisor" })}
                     </Button>
                 </>
             )}

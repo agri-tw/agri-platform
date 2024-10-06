@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import { Button } from "@mantine/core";
 
 interface LoginRegisterSwitchProps {
@@ -6,6 +8,7 @@ interface LoginRegisterSwitchProps {
 }
 
 export const LoginRegisterSwitch: React.FC<LoginRegisterSwitchProps> = (props) => {
+    const { t } = useTranslation();
     const handleSwitch = () => {
         switch (props.type) {
             case "login":
@@ -19,8 +22,8 @@ export const LoginRegisterSwitch: React.FC<LoginRegisterSwitchProps> = (props) =
 
     return (
         <Button variant="transparent" onClick={handleSwitch}>
-            {props.type === "login" && "Don't have an account?"}
-            {props.type === "register" && "Already have an account?"}
+            {props.type === "login" && t("dontHaveAccount", { ns: "common" })}
+            {props.type === "register" && t("alreadyHaveAccount", { ns: "common" })}
         </Button>
     );
 };

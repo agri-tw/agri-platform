@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 import { Button, Group, Image, Text } from "@mantine/core";
@@ -11,6 +12,7 @@ import { url } from "@/constants/routes";
 import "./navbarStart.css";
 
 export const NavbarStart: React.FC = () => {
+    const { t } = useTranslation();
     const navigate = useNavigate();
     const handleNavigateTo = (link: keyof typeof url) => {
         navigate(url[link]);
@@ -40,7 +42,7 @@ export const NavbarStart: React.FC = () => {
                         variant="gradient"
                         gradient={{ from: "teal", to: "blue", deg: 90 }}
                     >
-                        Global Farm Assistant
+                        {t("globalFarmAssistant", { ns: "common" })}
                     </Text>
                     <Text
                         className="show-mobile"
@@ -49,7 +51,7 @@ export const NavbarStart: React.FC = () => {
                         variant="gradient"
                         gradient={{ from: "teal", to: "blue", deg: 90 }}
                     >
-                        Home
+                        {t("home", { ns: "common" })}
                     </Text>
                 </Group>
             </Button>
@@ -60,7 +62,7 @@ export const NavbarStart: React.FC = () => {
                 style={{ padding: 0 }}
             >
                 <Text size="md" fw={500}>
-                    Advisor
+                    {t("advisor", { ns: "common" })}
                 </Text>
             </Button>
             <LoginRegisterModal open={loginRegisterModalOpen} onClose={handleLoginRegisterModalClose} />

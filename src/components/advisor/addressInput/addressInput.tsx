@@ -1,4 +1,5 @@
 import { ChangeEventHandler, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,6 +17,7 @@ interface AddressInputProps {
 }
 
 export const AddressInput: React.FC<AddressInputProps> = (props) => {
+    const { t } = useTranslation();
     const [address, setAddress] = useState("");
 
     const handleAddressChange: ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -34,8 +36,8 @@ export const AddressInput: React.FC<AddressInputProps> = (props) => {
 
     return (
         <TextInput
-            label="Address"
-            description="Modify if the address is incorrect"
+            label={t("address", { ns: "advisor" })}
+            description={t("addressInputDescription", { ns: "advisor" })}
             leftSection={<FontAwesomeIcon icon={faLocationDot} />}
             value={address}
             disabled={props.loading}

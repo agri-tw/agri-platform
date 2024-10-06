@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import { Alert, Button, LoadingOverlay, PasswordInput, Stack, TextInput } from "@mantine/core";
 
 import { useLoginWithEmailAndPassword } from "./useLoginWithEmailAndPassword";
@@ -8,6 +10,7 @@ interface LoginWithEmailAndPasswordSectionProps {
 }
 
 export const LoginWithEmailAndPasswordSection: React.FC<LoginWithEmailAndPasswordSectionProps> = (props) => {
+    const { t } = useTranslation();
     const loginWithEmailAndPassword = useLoginWithEmailAndPassword();
 
     const handleEmailChangeEvent: React.ChangeEventHandler<HTMLInputElement> = (e) => {
@@ -29,26 +32,26 @@ export const LoginWithEmailAndPasswordSection: React.FC<LoginWithEmailAndPasswor
         <Stack gap="lg">
             <LoadingOverlay visible={loginWithEmailAndPassword.isLoading} />
             {loginWithEmailAndPassword.isError && (
-                <Alert variant="light" color="red" title="Login Failed">
+                <Alert variant="light" color="red" title={t("signInFailed", { ns: "common" })}>
                     {loginWithEmailAndPassword.errorMessage}
                 </Alert>
             )}
             <Stack gap="xs">
                 <TextInput
-                    label="Email"
-                    placeholder="Enter your email"
+                    label={t("email", { ns: "common" })}
+                    placeholder={t("emailPlaceholder", { ns: "common" })}
                     value={loginWithEmailAndPassword.payload.email}
                     onChange={handleEmailChangeEvent}
                 />
                 <PasswordInput
-                    label="Password"
-                    placeholder="Enter your password"
+                    label={t("password", { ns: "common" })}
+                    placeholder={t("passwordPlaceholder", { ns: "common" })}
                     value={loginWithEmailAndPassword.payload.password}
                     onChange={handlePasswordChangeEvent}
                 />
             </Stack>
             <Button type="submit" fullWidth onClick={handleLogin}>
-                Sign in
+                {t("signIn", { ns: "common" })}
             </Button>
         </Stack>
     );
