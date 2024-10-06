@@ -11,7 +11,9 @@ interface AdvisorOutputSectionProps {
 
 const AccordionItem: React.FC<{ title: string; value: string }> = (props) => (
     <Accordion.Item key={props.title} value={props.title}>
-        <Accordion.Control>{props.title}</Accordion.Control>
+        <Accordion.Control>
+            <Text fw={600}>{props.title}</Text>
+        </Accordion.Control>
         <Accordion.Panel>{props.value}</Accordion.Panel>
     </Accordion.Item>
 );
