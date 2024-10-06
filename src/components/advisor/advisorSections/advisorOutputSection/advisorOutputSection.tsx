@@ -1,4 +1,6 @@
-import { Accordion, Alert } from "@mantine/core";
+import { useTranslation } from "react-i18next";
+
+import { Accordion, Alert, Text } from "@mantine/core";
 
 import { Advice } from "@/models/advisor";
 
@@ -19,6 +21,7 @@ const AccordionItem: React.FC<{ title: string; value: string }> = (props) => (
 );
 
 export const AdvisorOutputSection: React.FC<AdvisorOutputSectionProps> = (props) => {
+    const { t } = useTranslation();
     if (props.loading) {
         return <div>Loading...</div>;
     } else if (props.isError) {
@@ -33,7 +36,7 @@ export const AdvisorOutputSection: React.FC<AdvisorOutputSectionProps> = (props)
         return (
             <Accordion defaultValue="crop_price_management">
                 {Object.entries(props.data).map(([key, value]) => (
-                    <AccordionItem key={key} title={key} value={value} />
+                    <AccordionItem key={key} title={t(key, { ns: "advisor" })} value={value} />
                 ))}
             </Accordion>
         );
