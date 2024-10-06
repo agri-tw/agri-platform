@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { Button, Group, Text } from "@mantine/core";
+import { Button, Group, Image, Text } from "@mantine/core";
 
 import { useIsLoggedInQuery } from "@/api/user";
+import favicon from "@/assets/images/favicon.png";
 import { LoginRegisterModal } from "@/components/common";
 import { url } from "@/constants/routes";
+
+import "./navbarStart.css";
 
 export const NavbarStart: React.FC = () => {
     const navigate = useNavigate();
@@ -28,11 +31,25 @@ export const NavbarStart: React.FC = () => {
     return (
         <Group>
             <Button variant="transparent" onClick={() => handleNavigateTo("home")}>
-                <Text size="xl" fw={900} variant="gradient" gradient={{ from: "teal", to: "blue", deg: 90 }}>
-                    Global Farm Assistant
-                </Text>
+                <Group>
+                    <Image radius="md" h={20} w="auto" fit="contain" src={favicon} />
+                    <Text
+                        className="hidden-mobile"
+                        size="xl"
+                        fw={900}
+                        variant="gradient"
+                        gradient={{ from: "teal", to: "blue", deg: 90 }}
+                    >
+                        Global Farm Assistant
+                    </Text>
+                </Group>
             </Button>
-            <Button variant="transparent" onClick={handleAdvisorClick} disabled={checkingIsLoggedIn}>
+            <Button
+                variant="transparent"
+                onClick={handleAdvisorClick}
+                disabled={checkingIsLoggedIn}
+                style={{ padding: 0 }}
+            >
                 <Text size="md" fw={500}>
                     Advisor
                 </Text>

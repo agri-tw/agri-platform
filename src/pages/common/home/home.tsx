@@ -1,6 +1,6 @@
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button, Center, Group, Image, Text } from "@mantine/core";
+import { Button, Center, Group, Image, Space, Text } from "@mantine/core";
 
 import favicon from "@/assets/images/favicon.png";
 import homebg from "@/assets/images/homebg.jpg";
@@ -20,6 +20,8 @@ export const Home: React.FC = () => {
                     textAlign: "center",
                     gap: "12px",
                     borderRadius: "12px",
+                    height: "100%",
+                    minHeight: "calc(95vh - var(--app-shell-header-height))",
                 }}
             >
                 <Group>
@@ -41,9 +43,10 @@ export const Home: React.FC = () => {
                     Empower farmers with data-driven insights to make informed decisions and enhance agricultural
                     productivity and sustainability.
                 </Text>
+                <Space h="lg" />
                 <Button size="lg" variant="gradient" gradient={{ from: "blue", to: "cyan", deg: 90 }}>
                     <Text size="24px" fw={500} pr="md">
-                        Get started with advisor
+                        Get started
                     </Text>
                     <FontAwesomeIcon icon={faArrowRight} size="xl" />
                 </Button>

@@ -19,6 +19,7 @@ import "@mantine/notifications/styles.css";
 import "@mantine/spotlight/styles.css";
 import "@mantine/tiptap/styles.css";
 import "normalize.css";
+import "./index.css";
 
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
