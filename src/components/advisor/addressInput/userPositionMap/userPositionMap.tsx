@@ -2,12 +2,10 @@ import { useRef, useState } from "react";
 
 import { faMapLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ActionIcon, AspectRatio, Button, Drawer } from "@mantine/core";
+import { ActionIcon, Drawer } from "@mantine/core";
 
 import { useGoogleMaps } from "@/contexts/googleMaps";
 import { loadGoogleMapMarker } from "@/utils/googleMaps";
-
-import "./userPositionMap.css";
 
 interface UserPositionMapProps {
     coordinates: google.maps.LatLng | undefined;
@@ -84,9 +82,12 @@ export const UserPositionMap: React.FC<UserPositionMapProps> = (props) => {
                 onClose={handleClose}
                 title="Find your Position"
                 position="bottom"
-                style={{ height: "reset", minHeight: "reset", maxHeight: "reset" }}
+                styles={{
+                    body: { flex: 1 },
+                    content: { display: "flex", flexDirection: "column" },
+                }}
             >
-                <AspectRatio ref={mapWrapperRef} ratio={1080 / 720} mah="50vh" maw="90%" mx="auto" />
+                <div ref={mapWrapperRef} style={{ width: "100%", height: "100%" }} />
             </Drawer>
 
             <ActionIcon onClick={handleOpen}>

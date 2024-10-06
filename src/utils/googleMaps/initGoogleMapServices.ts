@@ -21,6 +21,10 @@ export const initGoogleMapServices = async (language: string) => {
     const geocoder = new Geocoder();
     const { Map } = (await loaderRef.current?.importLibrary("maps")) as google.maps.MapsLibrary;
     const mapDiv = document.createElement("div");
+    mapDiv.id = "google-map";
+    mapDiv.style.width = "100%";
+    mapDiv.style.height = "100%";
+    mapDiv.style.borderRadius = "10px";
     const map = new Map(mapDiv, defaultMapOptions);
     return { geocoder, map };
 };
