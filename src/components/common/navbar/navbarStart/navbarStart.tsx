@@ -42,6 +42,15 @@ export const NavbarStart: React.FC = () => {
                     >
                         Global Farm Assistant
                     </Text>
+                    <Text
+                        className="show-mobile"
+                        size="xl"
+                        fw={900}
+                        variant="gradient"
+                        gradient={{ from: "teal", to: "blue", deg: 90 }}
+                    >
+                        Home
+                    </Text>
                 </Group>
             </Button>
             <Button

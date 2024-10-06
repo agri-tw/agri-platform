@@ -40,7 +40,6 @@ export const Home: React.FC = () => {
                     display: "flex",
                     flexDirection: "column",
                     textAlign: "center",
-                    gap: "12px",
                     borderRadius: "12px",
                     height: "100%",
                     minHeight: "calc(95vh - var(--app-shell-header-height))",
@@ -57,15 +56,16 @@ export const Home: React.FC = () => {
                     fw={700}
                     variant="gradient"
                     gradient={{ from: "teal.0", to: "blue.0", deg: 90 }}
-                    style={{ lineHeight: "60px" }}
+                    style={{ lineHeight: "48px" }}
                 >
                     Empowering Farmers with AI
                 </Text>
+                <Space h="lg" />
                 <Text size="md" fw={500} variant="gradient" gradient={{ from: "teal.0", to: "blue.0", deg: 90 }}>
                     Empower farmers with data-driven insights to make informed decisions and enhance agricultural
                     productivity and sustainability.
                 </Text>
-                <Space h="lg" />
+                <Space h="xl" />
                 <Button
                     size="lg"
                     variant="gradient"

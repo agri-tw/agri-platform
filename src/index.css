@@ -1,5 +1,11 @@
+.show-mobile {
+    display: none;
+}
 @media (max-width: 512px) {
     .hidden-mobile {
         display: none;
+    }
+    .show-mobile {
+        display: block;
     }
 }
